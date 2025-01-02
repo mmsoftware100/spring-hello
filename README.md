@@ -21,6 +21,10 @@ https://www.oracle.com/java/technologies/downloads/
 
 
 ```bash
+# mac
+./gradlew bootRun
+
+# windows
 .\gradlew.bat bootRun
 ```
 
