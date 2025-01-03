@@ -147,3 +147,14 @@ Execution failed for task ':compileJava'.
 BUILD FAILED in 10s
 1 actionable task: 1 executed
 ```
+
+## 2025-01-03 Spring Basic
+
+- [ ] Basic API 
+- [ ] Basic CRUD API
+- [ ] Basic Data Structure
+- [ ] Basic html template rendering
+- [ ] Database and ORM
+- [ ] User authentication
+- [ ] User authorization
+- [ ] Layered architecture for RESTFul Webservices ( Middleware, Routing, Request Validation, Controller, Services, ORM, )
