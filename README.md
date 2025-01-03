@@ -158,3 +158,6 @@ BUILD FAILED in 10s
 - [ ] User authentication
 - [ ] User authorization
 - [ ] Layered architecture for RESTFul Webservices ( Middleware, Routing, Request Validation, Controller, Services, ORM, )
+
+
+*** Dependency တွေ ပြင်ပြီးသွားရင် gradle stop လုပ်ပြီးမှ ပြန် run သင့်တယ် ***

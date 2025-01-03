@@ -5,10 +5,12 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import mm.com.software100.springhello.hello.entities.ToDo;
 import mm.com.software100.springhello.hello.repository.ToDoRepository;
 
+@Service
 public class ToDoService {
     /*
      * @Autowired is a Spring Framework annotation used for dependency injection. 
