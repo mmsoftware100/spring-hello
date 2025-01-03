@@ -150,11 +150,11 @@ BUILD FAILED in 10s
 
 ## 2025-01-03 Spring Basic
 
-- [ ] Basic API 
-- [ ] Basic CRUD API
-- [ ] Basic Data Structure
-- [ ] Basic html template rendering
-- [ ] Database and ORM
+- [x] Basic API 
+- [x] Basic CRUD API
+- [x] Basic Data Structure
+- [x] Basic html template rendering
+- [x] Basic Database and ORM
 - [ ] User authentication
 - [ ] User authorization
 - [ ] Layered architecture for RESTFul Webservices ( Middleware, Routing, Request Validation, Controller, Services, ORM, )
@@ -168,3 +168,31 @@ BUILD FAILED in 10s
 - Controller Layer: Manages HTTP requests and responses.
 - Service Layer: Contains business logic.
 - Repository Layer: Handles data access and database interactions.
+
+
+User authentication အတွက် ဘာတွေ လုပ်ကြမလဲ?
+
+- [ ] User Entity
+- [ ] User Repository
+- [ ] User Service
+- [ ] User Controller
+
+
+that's all for basic operations.
+
+and then 
+- [ ] JWT Dependency
+- [ ] Configure Spring Security
+- [ ] Create JWT Utility Class
+- [ ] Create a JWT Filter
+- [ ] Register the JWT Filter
+- [ ] Test the Authentication
+
+
+basic endpoints
+
+- [ ] register -> POST
+- [ ] login -> POST
+- [ ] profile -> GET
+- [ ] update user -> PUT
+- [ ] delete user -> DELETE
