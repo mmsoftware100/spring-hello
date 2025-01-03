@@ -5,9 +5,10 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import mm.com.software100.springhello.hello.entities.ToDo;
+
 import mm.com.software100.springhello.hello.entities.User;
 import mm.com.software100.springhello.hello.repository.UserRepository;
 
@@ -16,6 +17,9 @@ public class UserService {
     
     @Autowired
     private UserRepository userRepository;
+    
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     
     @Autowired
@@ -32,6 +36,8 @@ public class UserService {
     }
 
     public User saveUser(User user) {
+        // encrypt password
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
@@ -44,7 +50,6 @@ public class UserService {
         }
     }
 
-    // login function
     public User login(String email, String password) {
         List<User> users = userRepository.findByEmail(email);
         if (users.size() == 0) {
@@ -52,23 +57,11 @@ public class UserService {
         }
         User user = users.get(0);
 
-        /*
-        // TODO: hash password and then check
         if (bCryptPasswordEncoder.matches(password, user.getPassword())) {
             return user;
         } else {
             return null;
         }
-        */
-
-        
-
-        if (user.getPassword().equals(password)) {
-            return user;
-        } else {
-            return null;
-        }
-        
     }
 
 }
