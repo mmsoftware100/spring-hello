@@ -161,3 +161,10 @@ BUILD FAILED in 10s
 
 
 *** Dependency တွေ ပြင်ပြီးသွားရင် gradle stop လုပ်ပြီးမှ ပြန် run သင့်တယ် ***
+
+
+### Layerd Architecture
+
+- Controller Layer: Manages HTTP requests and responses.
+- Service Layer: Contains business logic.
+- Repository Layer: Handles data access and database interactions.
