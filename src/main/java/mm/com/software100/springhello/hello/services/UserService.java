@@ -66,7 +66,8 @@ public class UserService {
         User user = users.get(0);
 
         if (bCryptPasswordEncoder.matches(password, user.getPassword())) {
-        // if (password.matches(user.getPassword())) {
+            // TODO: need to add JWT token to user
+            // we need to add access_token field to user while returning.
             return user;
         } else {
             return null;
