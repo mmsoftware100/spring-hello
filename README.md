@@ -36,6 +36,9 @@ https://www.oracle.com/java/technologies/downloads/
 # after updating dependency
 ./gradlew build
 
+
+./gradlew dependencies
+.\gradlew.bat --dependencies
 ```
 
 
@@ -196,3 +199,23 @@ basic endpoints
 - [ ] profile -> GET
 - [ ] update user -> PUT
 - [ ] delete user -> DELETE
+
+
+
+security config ချဖို့ တိုင်ပတ်နေတယ်။
+Official ရေးထုံးကိုလည်း မတွေ့ဘူး ဖြစ်နေတယ်။
+
+
+```bash
+Description:
+
+Field bCryptPasswordEncoder in mm.com.software100.springhello.hello.services.UserService required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+        - @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+```
