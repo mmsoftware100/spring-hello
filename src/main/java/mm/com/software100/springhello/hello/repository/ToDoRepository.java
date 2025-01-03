@@ -1,4 +1,4 @@
-package mm.com.software100.springhello.hello.repositores;
+package mm.com.software100.springhello.hello.repository;
 
 import java.util.List;
 
