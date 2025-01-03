@@ -37,8 +37,15 @@ public class UserService {
     }
 
     public User saveUser(User user) {
-        // encrypt password
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        // need to check password is update or not
+        // if password is not updated, then we don't need to encode password
+        // how to check password in hashed or not?
+        // Check if the password is already hashed
+        if (user.getPassword().length() != 60) {
+            // If not hashed, encode the password
+            user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        }
+        // user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
