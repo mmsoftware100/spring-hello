@@ -22,6 +22,12 @@ https://www.oracle.com/java/technologies/downloads/
 
 ```bash
 .\gradlew.bat bootRun
+
+# status
+.\gradlew.bat --status
+
+# stop
+.\gradlew.bat --stop
 ```
 
 
