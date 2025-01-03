@@ -219,3 +219,8 @@ Action:
 
 Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
 ```
+
+
+### Log ဘယ်လို မှတ်လဲ
+
+ဒါလည်း သိဖို့ လိုမယ်။ debug လုပ်ရ လွယ်မယ်။

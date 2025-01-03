@@ -18,6 +18,9 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
     
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
 
     
     @Autowired
@@ -35,7 +38,7 @@ public class UserService {
 
     public User saveUser(User user) {
         // encrypt password
-        // user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
@@ -55,8 +58,8 @@ public class UserService {
         }
         User user = users.get(0);
 
-        // if (bCryptPasswordEncoder.matches(password, user.getPassword())) {
-        if (password.matches(user.getPassword())) {
+        if (bCryptPasswordEncoder.matches(password, user.getPassword())) {
+        // if (password.matches(user.getPassword())) {
             return user;
         } else {
             return null;
