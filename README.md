@@ -32,6 +32,10 @@ https://www.oracle.com/java/technologies/downloads/
 
 # stop
 .\gradlew.bat --stop
+
+# after updating dependency
+./gradlew build
+
 ```
 
 

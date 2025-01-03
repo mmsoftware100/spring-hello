@@ -1,4 +1,4 @@
-package mm.com.software100.springhello.hello;
+package mm.com.software100.springhello.hello.controllers;
 
 import java.util.ArrayList;
 import java.util.HashMap;

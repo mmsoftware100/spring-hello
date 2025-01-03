@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Greeting</title>
+    <title>Spring Boot Thymeleaf Example</title>
 </head>
 <body>
-    <h1>Hello, ${name}!</h1>
+    <h1>Hello, <span th:text="${name}">World</span>!</h1>
+    <h2 th:text="'Name is ' + ${name}">N/A</h2>
 </body>
 </html>
