@@ -172,7 +172,7 @@ BUILD FAILED in 10s
 
 User authentication အတွက် ဘာတွေ လုပ်ကြမလဲ?
 
-- [ ] User Entity
+- [x] User Entity
 - [ ] User Repository
 - [ ] User Service
 - [ ] User Controller
