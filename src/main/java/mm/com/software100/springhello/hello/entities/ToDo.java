@@ -1,6 +1,5 @@
 package mm.com.software100.springhello.hello.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
