@@ -23,7 +23,6 @@ import mm.com.software100.springhello.hello.services.ToDoService;
 public class ToDoJPAController {
     @Autowired
     private ToDoService toDoService;
- 
 
     @GetMapping("/jpa-todos")
     public List<ToDo> getTasks(@RequestParam(value = "page", defaultValue = "1") Integer page) {
@@ -36,27 +35,37 @@ public class ToDoJPAController {
         return this.toDoService.saveTask(toDo);
     }
 
-
     @GetMapping("/jpa-todos/{id}")
     public ToDo getTaskById(@PathVariable Long id) {
-        return this.toDoService.getTaskById(id);
+        ToDo todo =  this.toDoService.getTaskById(id);
+        if(todo == null){
+            throw new RuntimeException("Task not found");
+        }
+        return todo;
     }
-
-    
 
     @PutMapping("/jpa-todos/{id}")
-    public ToDo updateTask(@PathVariable Long id, @RequestParam(value = "name", required = false) String name, @RequestParam(value = "status", required = false) String status) {
+    public ResponseEntity<Object> updateTask(@PathVariable Long id,
+            @RequestParam(value = "name", required = false) String name,
+            @RequestParam(value = "status", required = false) String status) {
         ToDo toDo = this.toDoService.getTaskById(id);
         if (toDo != null) {
-            toDo.setName(name);
-            if(status != null){
+            if (name != null) {
+                toDo.setName(name);
+            }
+            if (status != null) {
                 toDo.setStatus(status);
             }
-            return this.toDoService.saveTask(toDo);
+            ToDo updatedToDo = this.toDoService.saveTask(toDo);
+            return ResponseEntity.ok(updatedToDo); // Return the updated ToDo
         } else {
-            return null;
+            // Return an error JSON with a message and a NOT_FOUND status
+            Map<String, String> errorResponse = new HashMap<>();
+            errorResponse.put("error", "Task not found");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
         }
     }
+    
 
     @DeleteMapping("/jpa-todos/{id}")
     public ResponseEntity<Map<String, String>> deleteTask(@PathVariable Long id) {
@@ -70,7 +79,7 @@ public class ToDoJPAController {
             response.put("message", "Task not found");
             return new ResponseEntity<Map<String, String>>(response, HttpStatus.NOT_FOUND);
         }
-        
+
     }
 
 }
